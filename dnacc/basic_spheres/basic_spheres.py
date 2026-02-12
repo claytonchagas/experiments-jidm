@@ -1,11 +1,9 @@
-from speedupy.speedupy import initialize_speedupy
 from dnacc.derjaguin import calc_spheres_potential
 import dnacc
 from dnacc.units import nm
 import numpy as np
 import sys
 
-@initialize_speedupy
 def main(n):
     plates = dnacc.PlatesMeanField()
     plates.add_tether_type(plate='lower', sticky_end='alpha', L=20 * nm, sigma=1 / (20 * nm) ** 2)

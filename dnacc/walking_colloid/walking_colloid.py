@@ -1,8 +1,6 @@
 import sys
 sys.path.append('/home/joaopedrolopez/Downloads/AvaliacaoExperimental/Experimentos/DNACC-with-speedupy/adapted_for_speedupy/examples/walking_colloid')
-from speedupy.speedupy import maybe_deterministic
 import sys, os
-from speedupy.speedupy import initialize_speedupy
 from dnacc.derjaguin import calc_spheres_potential
 import numpy as np
 import subprocess
@@ -18,7 +16,6 @@ BETA_2 = plates.add_tether_type(plate='surface', sticky_end='beta2')
 R = 500.0 * nm
 ts = plates.tether_types
 
-@maybe_deterministic
 def do_it(beta_DeltaG0Mid):
     print('Working on beta_DeltaG0Mid = %g' % beta_DeltaG0Mid)
     for beta_Delta in range(0, 10):
@@ -42,7 +39,6 @@ def do_it(beta_DeltaG0Mid):
                         offset = -minBetaF
                     f.write('%.2f\t%.4f\t%.4f\n' % (c, minBetaF + offset, minH / nm))
 
-@initialize_speedupy
 def main(n):
     for beta_DeltaG0Mid in range(n, 1):
         do_it(beta_DeltaG0Mid)

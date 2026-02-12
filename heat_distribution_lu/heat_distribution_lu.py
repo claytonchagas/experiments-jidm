@@ -1,10 +1,8 @@
 from solver import Solver
 from model import Model
-from speedupy.speedupy import initialize_speedupy
 import time
 import sys
 
-@initialize_speedupy
 def main(n):
     dimensionality = (2, 2)
     nx = 0.15

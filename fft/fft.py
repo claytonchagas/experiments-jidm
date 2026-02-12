@@ -2,9 +2,7 @@ import numpy as np
 import numpy.random as rn
 import sys
 import time
-from speedupy.speedupy import initialize_speedupy, deterministic
 
-@deterministic
 def compute_FFT(n):
     """
         Compute the FFT of an n-by-n matrix of data
@@ -16,7 +14,6 @@ def compute_FFT(n):
     result = np.abs(result)
     return result
 
-@initialize_speedupy
 def main(n):
     for i in range(100, n + 1, 100):
         compute_FFT(i)

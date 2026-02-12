@@ -1,8 +1,6 @@
 from __future__ import division
 import sys
 sys.path.append('/home/joaopedrolopez/Downloads/AvaliacaoExperimental/Experimentos/epr-with-speedupy')
-from speedupy.speedupy import maybe_deterministic
-from speedupy.speedupy import initialize_speedupy, deterministic
 import numpy
 import sys
 import matplotlib
@@ -19,7 +17,6 @@ rcParams['figure.facecolor'] = 'white'
 rcParams['figure.edgecolor'] = 'white'
 PARTICLE_SPIN = 1.0
 
-@maybe_deterministic
 def analyse(spin=PARTICLE_SPIN, PARAM=0):
     """Perform analysis on saved output files after the simulation is done"""
     alice_raw = numpy.load(gzip.open('Alice.npy.gz'))
@@ -34,7 +31,6 @@ def analyse(spin=PARTICLE_SPIN, PARAM=0):
     angles, o_angles, Eab, Corr = find_all_settings_used_in_simulation(abdeg, adeg, bdeg, alice, bob)
     display_results(abdeg, adeg, bdeg, alice, bob, angles, o_angles, Eab, Corr, spin, PARAM)
 
-@deterministic
 def find_all_settings_used_in_simulation(abdeg, adeg, bdeg, alice, bob):
     angles = numpy.append(numpy.unique(abdeg), [360.0])
     Eab = numpy.zeros_like(angles)
@@ -55,7 +51,6 @@ def find_all_settings_used_in_simulation(abdeg, adeg, bdeg, alice, bob):
         Eab[i] = Nab[i] > 0.0 and temp2.mean() or 0.0
     return (angles, o_angles, Eab, Corr)
 
-@maybe_deterministic
 def display_results(abdeg, adeg, bdeg, alice, bob, angles, o_angles, Eab, Corr, spin, PARAM):
     setting_pairs = list(itertools.product(numpy.unique(adeg), numpy.unique(bdeg)))
     if len(setting_pairs) > 4:
@@ -105,21 +100,18 @@ def display_results(abdeg, adeg, bdeg, alice, bob, angles, o_angles, Eab, Corr, 
     plt.savefig('analysis.png', dpi=90)
     plt.show(block=False)
 
-@deterministic
 def QMFunc(a, spin):
     if spin == 0.5:
         return -numpy.cos(a)
     else:
         return numpy.cos(2 * a)
 
-@deterministic
 def BellFunc(spin):
     if spin == 0.5:
         return ([0.0, 180.0, 360.0], [-1.0, 1.0, -1.0])
     else:
         return ([0.0, 90.0, 180.0, 270.0, 360.0], [1.0, -1.0, 1.0, -1.0, 1.0])
 
-@deterministic
 def val(x):
     ANGLE_RESOLUTION = 3.75
     return numpy.round(x / ANGLE_RESOLUTION) * ANGLE_RESOLUTION
@@ -140,7 +132,6 @@ def val(x):
 #     main()
 
 
-@initialize_speedupy
 def main(PARAM):
     PARTICLE_SPIN = 0.5
     analyse(PARTICLE_SPIN, PARAM)

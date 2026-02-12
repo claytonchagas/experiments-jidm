@@ -3,9 +3,7 @@ import sys
 from pathlib import Path
 import sys
 sys.path.append(str(Path(__file__).parent.parent.parent))
-from speedupy.speedupy import deterministic
 
-@deterministic
 def fatoracao_lu(A):
     n = len(A)
     L = [[0.0] * n for i in range(n)]
@@ -28,7 +26,6 @@ def fatoracao_lu(A):
             L[i][j] = (dense_a_i[0][j] - soma) / U[j][j]
     return (L, U)
 
-@deterministic
 def resolve_lu(A, B):
     n = len(A)
     L, U = fatoracao_lu(A)

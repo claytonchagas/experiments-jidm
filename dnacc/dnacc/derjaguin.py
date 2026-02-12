@@ -22,13 +22,11 @@ __all__ = ['calc_spheres_potential']
 import sys, os
 PROJECT_FOLDER = os.path.join(os.path.dirname(__file__), '..', '..')
 sys.path.append(PROJECT_FOLDER)
-from speedupy.speedupy import deterministic
 
 from math import pi
 import numpy as np
 from scipy.integrate import cumtrapz
 
-@deterministic
 def calc_spheres_potential(h_arr, V_plate_arr, R1, R2=0.0):
     """Approximate sphere-sphere potential from plate-plate potential.
 

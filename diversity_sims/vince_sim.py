@@ -1,14 +1,11 @@
 import sys
 sys.path.append('/home/ricardo/Downloads/selected/diversity-with-speedupy')
-from speedupy.speedupy import maybe_deterministic
-from speedupy.speedupy import initialize_speedupy, deterministic
 import numpy as np
 from itertools import combinations
 from collections import Counter
 import datetime as dt
 np.random.seed(0)
 
-@maybe_deterministic
 def repeat_mutation_sim(G, N, L, mu=3e-08):
     """
     Generate N repeats of length L mutating at rate
@@ -21,7 +18,6 @@ def repeat_mutation_sim(G, N, L, mu=3e-08):
         repeat_alleles.append(positions)
     return repeat_alleles
 
-@deterministic
 def count_shared_mutations(sims):
     counts = Counter()
     i = 0
@@ -34,7 +30,6 @@ def count_shared_mutations(sims):
         counts[num_shared] += num_shared
     return counts
 
-@initialize_speedupy
 def main(N):
     x = repeat_mutation_sim(N, 12162, 156)
     t1 = dt.datetime.now()

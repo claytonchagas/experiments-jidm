@@ -1,6 +1,5 @@
 import sys
 sys.path.append('/home/joaopedrolopez/Downloads/AvaliacaoExperimental/Experimentos/speedupy_experiments/01pilots/01pilots_exp04_heat_distribution_lu/adapted_for_speedupy')
-from speedupy.speedupy import maybe_deterministic
 import os
 import time
 import numpy as np
@@ -8,7 +7,6 @@ import seaborn as sns
 import matplotlib.pylab as plt
 import imageio
 
-@maybe_deterministic
 def draw(matrix):
     ax = sns.heatmap(matrix, cmap='coolwarm')
     if not os.path.exists('images/tmp'):
@@ -16,7 +14,6 @@ def draw(matrix):
     plt.savefig('images/tmp/img_' + str(time.time()) + '.png')
     plt.close()
 
-@maybe_deterministic
 def generateGif():
     directory = 'images/tmp/'
     if not os.path.exists('images/gif'):
@@ -28,7 +25,6 @@ def generateGif():
     writer.close()
     clearFiles(directory)
 
-@maybe_deterministic
 def clearFiles(directory):
     if os.path.exists(directory):
         files = os.listdir(directory)

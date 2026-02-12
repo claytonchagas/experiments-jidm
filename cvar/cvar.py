@@ -1,9 +1,7 @@
-from speedupy.speedupy import initialize_speedupy, deterministic
 import time
 import sys
 import numpy as np
 
-@deterministic
 def get_empirical_CVaR(rewards, alpha=0.9):
     temp1 = list(rewards)
     a = sorted(temp1.copy(), reverse=True)
@@ -21,7 +19,6 @@ def get_empirical_CVaR(rewards, alpha=0.9):
         temp = a[:ind + 1]
     return sum(temp) / len(temp)
 
-@initialize_speedupy
 def main(rewards):
     print(get_empirical_CVaR(rewards, 0.9))
 if __name__ == '__main__':
