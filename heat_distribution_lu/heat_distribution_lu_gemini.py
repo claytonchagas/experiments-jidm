@@ -1,0 +1,16 @@
+from solver import Solver
+from model import Model
+import time
+import sys
+
+n = float(sys.argv[1])
+dimensionality = (2, 2)
+nx = 0.15
+ny = 0.15
+delta_t = n
+start_time = time.perf_counter()
+model = Model(nx, ny, dimensionality)
+solver = Solver(model, delta_t)
+solver.solve()
+end_time = time.perf_counter()
+print(end_time - start_time)
