@@ -1,5 +1,4 @@
 import sys
-sys.path.append('/home/ricardo/Downloads/selected/diversity-with-speedupy')
 import numpy as np
 from itertools import combinations
 from collections import Counter

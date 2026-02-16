@@ -1,6 +1,5 @@
 from __future__ import division
 import sys
-sys.path.append('/home/joaopedrolopez/Downloads/AvaliacaoExperimental/Experimentos/epr-with-speedupy')
 import numpy
 import sys
 import matplotlib

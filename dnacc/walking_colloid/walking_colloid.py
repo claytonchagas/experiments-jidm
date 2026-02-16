@@ -1,5 +1,4 @@
 import sys
-sys.path.append('/home/joaopedrolopez/Downloads/AvaliacaoExperimental/Experimentos/DNACC-with-speedupy/adapted_for_speedupy/examples/walking_colloid')
 import sys, os
 from dnacc.derjaguin import calc_spheres_potential
 import numpy as np
