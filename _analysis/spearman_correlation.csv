@@ -1,0 +1,17 @@
+Code Metric,Graph Metric,Spearman rho,p-value,N,Significant
+NFuncs,Nodes,-0.3413,0.1658,18,No
+NFuncs,Edges,-0.3257,0.1872,18,No
+NFuncs,Longest Path,-0.3328,0.2078,16,No
+NFuncs,Components,0.0997,0.694,18,No
+LOC,Nodes,-0.0918,0.7173,18,No
+LOC,Edges,-0.0631,0.8035,18,No
+LOC,Longest Path,-0.4661,0.0688,16,No
+LOC,Components,0.2287,0.3614,18,No
+NFuncs/LOC,Nodes,-0.4004,0.0997,18,No
+NFuncs/LOC,Edges,-0.3853,0.1143,18,No
+NFuncs/LOC,Longest Path,-0.3476,0.1871,16,No
+NFuncs/LOC,Components,0.0631,0.8037,18,No
+LOC/F,Nodes,-0.1514,0.6385,12,No
+LOC/F,Edges,-0.1933,0.5472,12,No
+LOC/F,Longest Path,-0.5218,0.0819,12,No
+LOC/F,Components,0.0092,0.9773,12,No

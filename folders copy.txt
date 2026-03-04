@@ -1,0 +1,6 @@
+belief_propagation/
+cvar/
+fft/
+gauss_legendre_quadrature/
+heat_distribution_lu/
+look_and_say/

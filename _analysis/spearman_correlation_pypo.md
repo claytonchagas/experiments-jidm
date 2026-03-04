@@ -1,0 +1,21 @@
+| Code Metric | Graph Metric | Spearman rho | p-value | N | Significant |
+| ----------- | ------------ | ------------ | ------- | - | ----------- |
+| NFuncs      | Nodes        | -0.2         | 0.8     | 4 | No          |
+| NFuncs      | Edges        | -0.2         | 0.8     | 4 | No          |
+| NFuncs      | Longest Path | 0.866        | 0.3333  | 3 | No          |
+| NFuncs      | Components   | -0.7746      | 0.2254  | 4 | No          |
+|             |              |              |         |   |             |
+| LOC         | Nodes        | -0.4         | 0.6     | 4 | No          |
+| LOC         | Edges        | -0.4         | 0.6     | 4 | No          |
+| LOC         | Longest Path | 0.866        | 0.3333  | 3 | No          |
+| LOC         | Components   | -0.7746      | 0.2254  | 4 | No          |
+|             |              |              |         |   |             |
+| NFuncs/LOC  | Nodes        | -0.2         | 0.8     | 4 | No          |
+| NFuncs/LOC  | Edges        | -0.2         | 0.8     | 4 | No          |
+| NFuncs/LOC  | Longest Path | 0.866        | 0.3333  | 3 | No          |
+| NFuncs/LOC  | Components   | -0.7746      | 0.2254  | 4 | No          |
+|             |              |              |         |   |             |
+| LOC/F       | Nodes        | -1.0         | 0.0     | 3 | Yes         |
+| LOC/F       | Edges        | -1.0         | 0.0     | 3 | Yes         |
+| LOC/F       | Longest Path | -0.866       | 0.3333  | 3 | No          |
+| LOC/F       | Components   | nan          | nan     | 3 | No          |
